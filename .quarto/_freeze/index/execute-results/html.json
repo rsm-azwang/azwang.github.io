@@ -1,0 +1,15 @@
+{
+  "hash": "a164339cf516ed1151880851217e0f06",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Andrew Wang\"\nimage: \"images/profile_pic.jpg\"\nabout:\n  template: jolla\n  links: \n    - icon: envelope\n      href: mailto:andrew.wang13@gmail.com\n    - icon: linkedin\n      href: https://www.linkedin.com/in/andrew-wang-b085b8223/\n---\n\n\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

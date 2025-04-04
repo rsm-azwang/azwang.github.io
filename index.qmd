@@ -1,0 +1,13 @@
+---
+title: "Andrew Wang"
+image: "images/profile_pic.jpg"
+about:
+  template: jolla
+  links: 
+    - icon: envelope
+      href: mailto:andrew.wang13@gmail.com
+    - icon: linkedin
+      href: https://www.linkedin.com/in/andrew-wang-b085b8223/
+---
+
+Here is a paragraph about me!
