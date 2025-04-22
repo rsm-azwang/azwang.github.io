@@ -10,4 +10,8 @@ about:
       href: https://www.linkedin.com/in/andrew-wang-b085b8223/
 ---
 
-Here is a paragraph about me!
+I currently study at UC San Diego within the MSBA program and am currently 
+looking for a full-time job to be a Data/Business Analyst. With an undergraduate 
+at UC San Diego in Mathematics: Probability & Statistics, I strive to apply 
+my statistics background when analyzing data trends and ultimately providing 
+data-driven business decisions.

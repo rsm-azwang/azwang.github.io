@@ -10,7 +10,20 @@ callout-appearance: minimal # this hides the blue "i" icon on .callout-notes
 
 Dean Karlan at Yale and John List at the University of Chicago conducted a field experiment to test the effectiveness of different fundraising letters. They sent out 50,000 fundraising letters to potential donors, randomly assigning each letter to one of three treatments: a standard letter, a matching grant letter, or a challenge grant letter. They published the results of this experiment in the _American Economic Review_ in 2007. The article and supporting data are available from the [AEA website](https://www.aeaweb.org/articles?id=10.1257/aer.97.5.1774) and from Innovations for Poverty Action as part of [Harvard's Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/27853&version=4.2).
 
-_to do: expand on the description of the experiment._
+In the experiment conducted by Karlan and List (2007), the researchers partnered with a nonprofit organization to examine how different types of matching grant offers influence charitable giving. They designed a large-scale field experiment involving over 50,000 potential donors who had previously contributed to the organization.
+
+These donors were randomly assigned to receive one of several variations of a fundraising letter, with the key manipulation being the type of matching grant described. The treatments included:
+
+Standard Letter: A regular appeal without mention of any matching funds.
+
+Matching Grant: The letter stated that contributions would be matched dollar-for-dollar (or at different match ratios such as 2:1 or 3:1) by a lead donor.
+
+Challenge Grant: The letter stated that the lead donor would only contribute if enough donations were received from others.
+
+The goal was to test both behavioral economic predictions (such as social pressure or anchoring) and standard economic theory regarding how incentives affect giving behavior. The randomized design ensures that differences in donation behavior across groups can be causally attributed to the letter variation.
+
+The results provided key insights into fundraising strategy and the psychology of donors, with implications for both nonprofits and economic theory on altruism.
+
 
 This project seeks to replicate their results.
 
