@@ -273,7 +273,7 @@ Note
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="1a421415" class="cell" data-execution_count="1">
+<div id="e2038954" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -412,7 +412,7 @@ Note
 <section id="preparing-the-data-for-estimation" class="level2">
 <h2 class="anchored" data-anchor-id="preparing-the-data-for-estimation">3. Preparing the Data for Estimation</h2>
 <p>The “hard part” of the MNL likelihood function is organizing the data, as we need to keep track of 3 dimensions (consumer <span class="math inline">\(i\)</span>, covariate <span class="math inline">\(k\)</span>, and product <span class="math inline">\(j\)</span>) instead of the typical 2 dimensions for cross-sectional regression models (consumer <span class="math inline">\(i\)</span> and covariate <span class="math inline">\(k\)</span>). The fact that each task for each respondent has the same number of alternatives (3) helps. In addition, we need to convert the categorical variables for brand and ads into binary variables.</p>
-<div id="a1cfd9a7" class="cell" data-execution_count="2">
+<div id="bc5051d1" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Add alternative number within each task</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>conjoint_data[<span class="st">"alt"</span>] <span class="op">=</span> conjoint_data.groupby([<span class="st">"resp"</span>, <span class="st">"task"</span>]).cumcount() <span class="op">+</span> <span class="dv">1</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -511,7 +511,7 @@ Note
 <p>To estimate the parameters of the multinomial logit (MNL) model, we coded and maximized the log-likelihood function based on the assumption that each respondent chooses the alternative with the highest utility. The utility of each alternative was modeled as a linear function of its attributes: brand (with Netflix and Prime coded as binary indicators, and Hulu as the base), ad presence (Yes vs.&nbsp;No), and price.</p>
 <p>We used Python’s <code>scipy.optimize.minimize()</code> function with the BFGS optimization method to find the maximum likelihood estimates (MLEs) for the four coefficients: <span class="math inline">\(\beta_{\text{netflix}}\)</span>, <span class="math inline">\(\beta_{\text{prime}}\)</span>, <span class="math inline">\(\beta_{\text{ads}}\)</span>, and <span class="math inline">\(\beta_{\text{price}}\)</span>. Each observation was grouped by respondent and task to ensure the likelihood function properly aggregated over choice sets.</p>
 <p>After estimation, we extracted the inverse of the Hessian matrix to compute standard errors, and used these to construct 95% confidence intervals for each parameter. This process allows us to interpret the relative importance and statistical significance of each product attribute in driving consumer choice.</p>
-<div id="ef115b1d" class="cell" data-execution_count="3">
+<div id="7fa28bf8" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.optimize <span class="im">import</span> minimize</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -647,7 +647,7 @@ Note
 <p>In this section, we estimate the parameters of the multinomial logit (MNL) model using a Bayesian approach via Metropolis-Hastings Markov Chain Monte Carlo (MCMC) sampling. Unlike the maximum likelihood approach in the previous section, the Bayesian method incorporates prior beliefs about the parameters and yields a full posterior distribution for each coefficient.</p>
 <p>We assign normal priors to the four model parameters: <span class="math inline">\(\beta_{\text{netflix}}\)</span>, <span class="math inline">\(\beta_{\text{prime}}\)</span>, and <span class="math inline">\(\beta_{\text{ads}}\)</span> follow <span class="math inline">\(\mathcal{N}(0, 5)\)</span> distributions, while <span class="math inline">\(\beta_{\text{price}}\)</span> follows a more informative prior, <span class="math inline">\(\mathcal{N}(0, 1)\)</span>. Using the log-likelihood function developed earlier, we calculate the unnormalized log-posterior as the sum of the log-likelihood and log-prior.</p>
 <p>The sampler draws 11,000 candidate parameter vectors using a random-walk proposal distribution with independent normal increments. We discard the first 1,000 samples as burn-in and retain the final 10,000 samples for inference. This allows us to estimate the posterior mean, standard deviation, and 95% credible intervals for each parameter, while also visualizing the posterior distribution through trace plots and histograms.</p>
-<div id="e88b4c66" class="cell" data-execution_count="4">
+<div id="ed942542" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Prior: log-pdf for a Normal distribution</span></span>
@@ -687,7 +687,7 @@ Note
 <span id="cb6-37"><a href="#cb6-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Drop burn-in</span></span>
 <span id="cb6-38"><a href="#cb6-38" aria-hidden="true" tabindex="-1"></a>posterior_samples <span class="op">=</span> chain[burn_in:]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="eb721a4d" class="cell" data-execution_count="5">
+<div id="1e7c8907" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Extract beta_price samples (4th column)</span></span>
@@ -725,8 +725,7 @@ Note
 </div>
 </div>
 </div>
-<p><em>todo: report the 4 posterior means, standard deviations, and 95% credible intervals and compare them to your results from the Maximum Likelihood approach.</em></p>
-<div id="b5304eb4" class="cell" data-execution_count="6">
+<div id="f1f8f5ea" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -803,7 +802,7 @@ Note
 <p>However, the Bayesian credible intervals are generally wider, especially for the brand and ad coefficients. This reflects the additional uncertainty introduced by incorporating prior distributions. Notably, the Bayesian 95% credible intervals for <code>β_netflix</code>, <code>β_prime</code>, and <code>β_ads</code> include zero at the lower or upper bound, suggesting weaker evidence of statistical significance compared to the MLE confidence intervals, which excluded zero for all parameters.</p>
 <p>For <code>β_price</code>, both methods agree on the negative direction, but the Bayesian interval touches zero, whereas the MLE result was more confidently negative. This suggests that the Bayesian approach is more conservative in assessing attribute importance under the priors used.</p>
 <p>These results highlight how incorporating prior beliefs and using full posterior distributions can affect inference, even with a relatively informative dataset.</p>
-<div id="cd310f83" class="cell" data-execution_count="7">
+<div id="5a3b7795" class="cell" data-execution_count="7">
 <div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
